@@ -1,0 +1,25 @@
+@import 'styles/breakpoints';
+
+.site-header {
+	position: relative;
+	padding: 20px 0;
+	height: var(--header-ht)
+}
+
+.title {
+	text-decoration: none;
+}
+
+.description {
+	margin: .3rem 0 0 0;
+	font-size: 0.8rem;
+	opacity: 0.9;
+}
+
+@media (max-width: $breakpoint-md) {
+
+	.navbar {
+		position: relative;
+	}
+
+}

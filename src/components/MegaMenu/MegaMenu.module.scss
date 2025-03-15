@@ -1,0 +1,141 @@
+@import 'styles/breakpoints';
+
+
+.component {
+	background-color: var(--wpe--navigation-menu--background-color);
+}
+
+.menu {
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
+	gap: 0.5rem;
+
+	li {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		flex-direction: column;
+
+		@media (min-width: $breakpoint-sm) {
+			width: auto;
+			flex-direction: row;
+		}
+
+	}
+
+	a {
+		color: var(--wpe--navigation-menu--color);
+		padding: 0.5rem;
+		display: block;
+		transition: all 0.2s ease-out;
+		width: 100%;
+		white-space: nowrap;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			color: var(--wpe--navigation-menu--color--hover);
+		}
+
+	}
+}
+
+.nav--main-ctas ul.menu {
+	margin-left: 24px;
+}
+
+.mega__container {
+	padding-top:    40px;
+	padding-bottom: 40px;
+}
+
+// -------------------------------
+// Mega-related styles
+// -------------------------------
+
+// Mega has focus, but not this one?
+.nav--main:focus-within .menu-item-depth-0 .menu-btn-depth-0 {
+	transition: #{"opacity var(--trans-dur) var(--trans-func)"};
+	opacity: .3;
+}
+
+// This mega is focused?
+.nav--main .menu-item-depth-0:focus-within .menu-btn-depth-0,
+.nav--main .menu-item-depth-0 .menu-btn-depth-0:hover {
+	opacity: 1;
+}
+
+.nav--main--mega .menu-item-depth-0 .menu-btn-depth-0:hover {
+	color: var(--red);
+}
+
+// ----------------------------
+// Main nav =submenus
+// ----------------------------
+
+.mega__col--main {
+	position: relative;
+}
+
+.mega__col--main:first-child:before {
+	display: none !important;
+}
+
+.mega .menu-depth-1 {
+	font-size: 18px;
+}
+
+.mega .menu-btn-depth-1 {
+	padding: #{"0 var(--hor-pad)"};
+	margin-bottom: 17px;
+}
+
+.mega .menu-btn,
+.mega .menu-title {
+	padding-left: 0;
+}
+
+.mega__main-link a {
+	--link-color: var(--red);
+	--link-hover-color: var(--bluedark);
+	text-decoration: underline;
+}
+
+.mega__main-link a:hover {
+	text-decoration: none;
+}
+
+.card--mega {
+	max-width: 400px;
+}
+
+.card__desc--mega {
+	font-size: 14px;
+}
+
+@media (min-width: $breakpoint-md) {
+
+	.mega {
+		--gutter: 81px;
+	}
+
+	.mega__main-link {
+		font-size: 22px;
+	}
+
+	.mega__col--main:before {
+		content: "";
+		display: block;
+		height: 80%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		border-left: #{"1px solid var(--greylight)"};
+	}
+
+}
+
